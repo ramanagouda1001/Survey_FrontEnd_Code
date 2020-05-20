@@ -1,0 +1,45 @@
+<div class="container mt-4 card p-4">
+  <form>
+
+      <div class="card-body" *ngFor='let question of previewQuestions; index as i;'>     
+          <div class="row">
+              <div class="col col-md-1">
+                <div class="mt-4 ml-3">
+                  Q.{{i+1}}
+                </div>     
+              </div>  
+              <div class="col col-md-11">
+                <div class="p-4">
+                  <p style="text-align: justify;padding:0 !important;margin:0 !important">{{question.questionName}}</p>
+                </div>
+              </div>            
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col col-md-12">
+              <div class="input-group mb-3"  *ngFor="let option of question.options;  index as i">
+                <div class="input-group-prepend">
+                  <div class="input-group-text" *ngIf="question.questionType==='mcq'">
+                   &nbsp;<input type="radio" name="value" >
+                  </div>
+                  <div class="input-group-text" *ngIf="question.questionType==='checkbox'">
+                 &nbsp;<input type="checkbox" name="value" style="border: none;">
+                  </div>
+                  <div class="input-group-text" *ngIf="question.questionType==='paragraph'">
+                    &nbsp;
+                  </div>
+                </div>
+                <div  *ngIf="question.questionType=== 'mcq'" >{{option}}</div>
+                <div   *ngIf="question.questionType=== 'checkbox'" >{{option}}</div>
+             <div *ngIf="question.questionType=== 'paragraph'" >{{option}}</div>
+              </div>
+            </div> 
+          </div>
+
+      </div>     
+  </form>
+  <button routerLink='/questions' class="btn btn-primary btn-sm">back</button>
+</div>
+
+

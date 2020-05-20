@@ -1,0 +1,108 @@
+<app-header></app-header>
+
+<div class="alert alert-success" *ngIf='isToShow'>{{showMessage}}</div>
+<div class="alert alert-danger" *ngIf='showError'>Error</div>
+<div *ngIf="emptyerror">
+    <h5 style="text-align: center;">{{emptyerror}}</h5>
+</div>
+<div class="container " *ngFor="let item of responses">
+
+
+    <img src="http://localhost:8080/{{item.fileName}}" class="image" style="min-height: 300px; max-height: 300px;border-radius: 10px !important;">
+
+    <div class="overlay zoom" *ngIf="item.flag == true ">
+
+
+        <i class="fa fa-trash " aria-hidden="true" (click)="disablePopUp(item)" title="Delete" style="float:right;font-size:15px;padding-left: 0px;margin-top:5px;cursor: pointer;color:#dc3545"></i>
+
+
+
+        <i class="fa fa-pencil text-primary" aria-hidden="true" style="float:left;font-size:15px;margin-top:5px;cursor: pointer;margin-left: 10px;" (click)="navigations(item)" title="Edit"></i>
+
+
+        <div class="text" (click)="redirect(item.surveyId)" style="cursor: pointer;top: 65% !important;">
+            <p style="text-transform: capitalize;text-align: justify;
+      text-transform: capitalize;
+      font-size: 11px;font-family: 'Bellota', cursive;">{{item.description}}</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="overlay " *ngIf="item.flag == false">
+
+
+        <i class="fa fa-trash " aria-hidden="true" (click)="disablePopUp(item)" title="Delete" style="float:right;font-size:25px;padding-left: 0px;margin-top:5px;cursor: pointer;color:#dc3545"></i>
+
+
+
+        <i class="fa fa-pencil text-primary" aria-hidden="true" style="float:left;font-size:25px;margin-top:5px;cursor: pointer;margin-left: 10px;" (click)="navigations(item)" title="Edit"></i>
+
+
+        <div class="text">
+            <p style="text-transform: capitalize;text-align: justify;
+      text-transform: capitalize;
+      font-size: 15px;font-family: 'Bellota', cursive;">{{item.description}}</p>
+        </div>
+
+
+
+    </div>
+
+    <div class="overlay" *ngIf="item.activeUser == false ">
+
+
+        <i class="fa fa-trash " aria-hidden="true" (click)="disablePopUp(item)" title="Delete" style="float:right;font-size:25px;padding-left: 0px;margin-top:5px;cursor: pointer;color:#dc3545"></i>
+
+
+
+        <i class="fa fa-pencil text-primary" aria-hidden="true" style="float:left;font-size:25px;margin-top:5px;cursor: pointer;margin-left: 10px;" (click)="navigations(item)" title="Edit"></i>
+
+
+        <div class="text">
+            <p style="text-transform: capitalize;text-align: justify;
+      text-transform: capitalize;
+      font-size: 15px;font-family: 'Bellota', cursive;">{{item.description}}</p>
+        </div>
+
+
+
+    </div>
+    <h6 style="text-align: center;text-transform: capitalize;font-size:20px;font-family: 'Lobster', cursive;">{{item.surveyName}}</h6>
+
+</div>
+
+
+<div class="backdrop" [ngStyle]="{'display':display3}"></div>
+<div class="modal modal-backdrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" [ngStyle]="{'display':display3}">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header " style="height:50px;">
+                <div class="job">DISABLE SURVEY</div>
+                <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span
+            aria-hidden="true">&times;</span></button>
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="row col-md-12">
+                    <p style="font-size: 16px;">Are you sure you want to disable this survey ?</p>
+                    <div style="color:blue;">Survey Name:{{surveyname}}</div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-danger btn-md  pull-right" type="submit" (click)="closeModal()" style="
+        font-size: 12px;">Cancel</button>
+                <button class="btn btn-primary btn-md  pull-right" type="submit" (click)="disableSurvey(item)" style="font-size: 12px;">Ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>

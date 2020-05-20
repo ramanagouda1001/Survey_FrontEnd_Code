@@ -1,0 +1,71 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top navbar-dark" style="background:#000">
+    <a class="navbar-brand new" href="#">
+        TES<span class="ty-logo">T</span><span class="ty-logo">Y</span>ANTRA
+      </a>
+<div class="container-fluid">
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link new-link" routerLink="/stats" style="margin-top:10px">STATISTICS</a>
+    </li>
+    <li class="nav-item" style="margin-left: 500px;">
+    <button class="btn btn-outline-info offset"><a class="nav-link new-link" routerLink="/questions" >CREATE SURVEY</a></button> 
+    </li>
+</ul>
+<div class="row">
+    <form class="navbar-form">
+        <div class="row">
+   <div class="col-md-6">
+<img src="data:image/png;base64,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" class="img-circle" width="50px" height="50px" style="border-radius:50%">
+        </div>
+        <div class="col-md-6">
+<p style="color: #fff;margin-top:20px;">Hema</p>
+        </div>
+    
+        </div>
+    </form>
+  
+      </div>
+     
+    </div>
+  </nav> -->
+
+<nav class="navbar navbar-expand-lg  new-bg navbar-dark mb-4">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="container" class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <!-- <a href="#" class="navbar-brand">Angular Crud</a> -->
+         <a class="navbar-brand" href="index.html">
+		  <h2 ><span class="text-color">e</span>Survey</h2>
+        </a>  
+        <ul class="navbar-nav ml-auto ">
+            <li class="nav-item" >
+                <!-- <a routerLink="/stats"  class="nav-link text-white float-left">
+                   STATISTICS
+                </a> -->
+                <a routerLink="/stats"  class="nav-link text-white">
+                    <button class="btn mybtn">STATISTICS</button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="redirect()"  class="nav-link text-white">
+                    <button class="btn mybtn">CREATE SURVEY</button>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a  class="nav-link text-white">hemalucky02@gmail.com</a>
+                <a  class="nav-link text-white" style="margin-top: -20px;">HemaKrishna</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle  text-white"  data-toggle="dropdown"> 
+                    <img src="assets/img/female.png" class="img-circle" width="40px" height="50px" style="border-radius:50%" class="rounded-circle z-depth-0" style="height: 30px;" alt="">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info">
+                    <a class="dropdown-item" href="#">My account</a>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+

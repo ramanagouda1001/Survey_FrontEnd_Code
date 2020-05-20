@@ -1,0 +1,91 @@
+ <!-- <div class="container">
+  <div id="quiz">
+    <p class="mt-4 text-center"style="font-size:22px;font-weight:600">{{quiz.name}}</p>
+    <hr>
+    <div >
+      <div *ngFor="let question of quizes;">
+        <div *ngFor="let hema of question.questions;index as i">
+     
+          <p style="padding:10px;">{{i + 1}}.
+            <span [innerHTML]="hema.questionName"></span>
+          </p>
+          <div class="row text-left options" >
+            <div class="col-6" *ngFor="let option of hema.options" >
+              <div class="option round">
+                  <input id="{{option}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option);"> {{option}}
+              </div>
+            </div>
+          </div> 
+          <div class="row text-left options" >
+            <div class="col-6" *ngFor="let option of hema.options">
+              <div class="option chek">
+                <label class="font-weight-normal" [attr.for]="option" >
+                  <input id="{{option}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option);"> {{option}}
+                  </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+       
+         <hr>
+      </div>
+    </div>
+  
+    <div class="row text-center" *ngIf="mode=='review'">
+      <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
+        <div (click)="goTo(index)" class="p-3 mb-2 {{ isAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ isAnswered(question) }}</div>
+      </div>
+    </div>
+  
+    
+    
+    <div *ngIf="mode!='result'" class="mb-3">
+      <button class="btn btn-primary" (click)="onSubmit(quiz);">Submit</button>
+    </div>
+  </div>
+
+</div>  -->
+
+<!-- quiz code -->
+
+<div class="container">
+  <div id="quiz">
+    <p class="mt-4 text-center"style="font-size:22px;font-weight:600">{{quiz.name}}</p>
+    <hr>
+    <div *ngIf="mode=='quiz' && quiz">
+      <div *ngFor="let question of filteredQuestions;index as i">
+        <p style="padding:10px;">{{i + 1}}.
+          <span [innerHTML]="question.name"></span>
+        </p>
+        <div class="row text-left options" *ngIf="question.questionTypeId === 1 ">
+          <div class="col-6" *ngFor="let option of question.options">
+            <div class="option round">
+                <input id="{{option.id}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option,quiz);"> {{option.name}}
+            </div>
+          </div>
+        </div> 
+        <div class="row text-left options" *ngIf="question.questionTypeId === 2 ">
+          <div class="col-6" *ngFor="let option of question.options">
+            <div class="option chek">
+              <label class="font-weight-normal" [attr.for]="option.id">
+                <input id="{{option.id}}" type="checkbox" [(ngModel)]="option.selected" (change)="onSelect(question, option,quiz);"> {{option.name}}
+                </label>
+            </div>
+          </div>
+        </div> <hr>
+      </div>
+    </div>
+  
+    <div class="row text-center" *ngIf="mode=='review'">
+      <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
+        <div (click)="goTo(index)" class="p-3 mb-2 {{ isAnswered(question) == 'Answered'? 'bg-info': 'bg-warning' }}">{{index + 1}}. {{ isAnswered(question) }}</div>
+      </div>
+    </div>
+  
+    
+    
+ 
+  </div>
+
+</div>

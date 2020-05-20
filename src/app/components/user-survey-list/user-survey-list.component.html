@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Survey Name</th>
+          <th scope="col">Start Date	</th>
+          <th scope="col">End Date</th>
+          <th>Survey Count<img src="assets/img/person.png" alt="Image" class="myImg"></th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let survey of surveyNames">
+          <th scope="row">1</th>
+          <td (click)="navigateToQuiz()" style="cursor:pointer;">{{survey.surveyname}}</td>
+          <td>15-01-2020</td>
+          <td>27-02-2020</td>
+          <td>2</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Employer</td>
+          <td>15-01-2020</td>
+          <td>27-02-2020</td>
+          <td>2</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Employer</td>
+          <td>15-01-2020</td>
+          <td>27-02-2020</td>
+          <td>2</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

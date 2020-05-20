@@ -1,0 +1,37 @@
+
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600,700|Montserrat|Poppins:400,500,600,700");
+body {
+  line-height: 1.8;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+    .myheading {
+    font-size: 38px;
+    text-transform: uppercase;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    color: #232323;
+    letter-spacing: .5px;
+    }
+    .my-text {
+      color: #666;
+      font-family: "Montserrat", sans-serif;
+    }
+    .form-control {
+       border-color: #ced4da;color:#495057;
+    }   
+    input[type] {
+      border-bottom: 1px solid #ccc !important;
+  border: none;
+    box-shadow: none;
+    height: 50px;
+    outline: none;
+    font-size: 14px;
+  }
+  .form-control:focus {
+    border-color: #274685 ;
+    /* box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); */
+} 
+ 

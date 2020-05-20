@@ -1,0 +1,295 @@
+{
+    
+    "name": "User Survey",
+    "questions": [
+        {
+           
+            "name": "Does your work environment allow you to work distraction-free when you need to?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "yes"
+                
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "No"
+                
+                }
+            ]
+          
+        },
+        {
+       
+            "name": "Are you happy with the frequency at which you receive recognition from your manager?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "Yes",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "No",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "May be",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "ok ok",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+      
+            "name": "Do you feel like recognition is meaningful when you receive it?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "yes",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "Never",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "No way",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "may be",
+                    "isAnswer": false
+                }
+            ]
+        },
+        {
+           
+            "name": "Do you feel like your manager cares about your feedback?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "No way",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "Yes",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "Might be",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "None of the above",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+         
+            "name": "Do you feel like your work contributes to the goals of your organization?",
+            "questionTypeId": 1,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "Yes",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "no",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+           
+            "name": "How would you rate the way your organization makes use of your strengths?",
+            "questionTypeId": 2,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "25%",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "50%",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "75%",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "100%",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+            
+            "name": "Do you feel you have enough freedom to decide how you do your work?",
+            "questionTypeId": 2,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "Yes",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "No",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "Yes",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "May be",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+        
+            "name": "Would you refer someone to work here?",
+            "questionTypeId": 2,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "Sure",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "Yes",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "Why Not",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+           
+            "name": "Do you feel valued at work?",
+            "questionTypeId": 2,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "YES",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                }
+            ]
+          
+        },
+        {
+           
+            "name": "Do you believe you'll be able to reach your full potential here?",
+            "questionTypeId": 2,
+            "options": [
+                {
+                    "id": 1055,
+                    
+                    "name": "YES",
+                    "isAnswer": true
+                },
+                {
+                    "id": 1056,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1057,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                },
+                {
+                    "id": 1058,
+                    
+                    "name": "YES",
+                    "isAnswer": false
+                }
+            ]
+          
+        }
+    ]
+}

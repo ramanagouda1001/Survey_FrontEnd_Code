@@ -1,0 +1,98 @@
+/* for navabr */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bellota&display=swap');
+.text-logo {
+  /* color: #fff!important; */
+  color: white;
+  font-size: 25px;
+}
+.text-color {
+  color: #ff9800;
+}
+.new-bg {
+  background-color: #263248;
+}
+.mybtn {
+  color: white !important;
+  border-color: #da8405;
+  font-weight: 500;
+
+}
+.mybtn:hover  {
+  background-color: white !important;
+  color:black !important;
+}
+.dropdown-menu {
+
+margin-top: 12px !important;
+}
+
+.btn {
+padding: 5px 8px !important;
+font-size: 13px !important;
+}
+
+
+/* card */
+
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s; /* Animation */
+  height: 73% !important;
+  width: 85% !important;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+  .container{
+   
+    margin-left: 120px !important;
+    position: relative;
+    width: 20%;
+    float: left;
+    margin-right: -80px !important;
+    overflow-x: hidden;
+    margin: 1px;
+  }
+
+.image {
+display: block;
+width: 100%;
+height: auto;
+}
+
+.overlay {
+position: absolute;
+top: 0;
+bottom: 0;
+left: 13px;
+right: 0;
+height: 90%;
+width: 93%;
+opacity: 0;
+transition: .5s ease;
+background-color: #000;
+
+}
+
+.overlay:hover {
+opacity: 0.8;
+}
+
+.text {
+color: white;
+font-size: 20px;
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+text-align: center;
+}
+.modal-backdrop{
+opacity: 0.9;
+}

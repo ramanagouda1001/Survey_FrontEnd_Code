@@ -1,0 +1,446 @@
+<nav class="navbar navbar-expand-lg  new-bg navbar-dark mb-4">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="container" class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <a class="navbar-brand" href="index.html">
+      <h2><span class="text-color">e</span>Survey</h2>
+    </a>
+    <ul class="navbar-nav ml-auto ">
+
+      <li class="nav-item">
+        <a class="nav-link text-white">hemalucky02@gmail.com</a>
+        <a class="nav-link text-white" style="margin-top: -20px;">HemaKrishna</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle  text-white" data-toggle="dropdown">
+          <img src="assets/img/female.png" class="img-circle" width="40px" height="50px" style="border-radius:50%"
+            class="rounded-circle z-depth-0" style="height: 30px;" alt="">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-info">
+          <a class="dropdown-item" href="#">My account</a>
+          <a class="dropdown-item" href="#">Log out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="alert alert-danger" *ngIf='showError'>Error</div>
+<div class="alert alert-success" *ngIf='isToShow'>{{showMessage}}</div>
+<h5 style="text-align: center;color: #ff9800 !important;">CREATE YOUR SURVEY</h5>
+<div class="container mt-4 mb-2 myborder" style="padding:5px 25px;border-radius: 15px;">
+  <form [formGroup]="myForm" (ngSubmit)="submit()" enctype="multipart/form-data">
+    <div class="row card-body mt-2  mycard shodow" id="row1">
+
+      <input type="hidden" name="userName" formControlName="userName" class="form-control" />
+      <!-- <div class="col col-md-6">
+        <div class="form-group">
+          <label for="surveyName">Survey Name*</label>
+          <input type="text" name="surveyName" formControlName="surveyName" class="form-control"
+            placeholder="Enter Survey name" required />
+          <div class="text-danger" *ngIf='surveyName.touched && surveyName.invalid'>
+            <div *ngIf='surveyName.errors.required'>
+              *This field is mandatory
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+      <div class="col col-12 col-sm-6 col-md-4">
+      <div class="form-group  ty-font user-input-wrp"> <br/>
+        <input type="text" class="form-control  inputText" name="surveyName" formControlName="surveyName"
+          required>
+        <span class="floating-label">Survey Name</span>
+        <div class="text-danger" *ngIf='surveyName.touched && surveyName.invalid'>
+          <small *ngIf='surveyName.errors.required'>
+            *This field is mandatory
+          </small>
+        </div>
+      </div>
+      </div>
+      <!-- <div class="col col-md-6">
+        <label for="description">Description*</label>
+        <textarea class="form-control" formControlName="description"
+          placeholder="Enter Description(allows only 255 characters)" maxlength="255" required></textarea>
+
+
+        <small class="form-text text-muted"><code>{{description.value.length}}</code> of
+          <code>{{maxdescriptionLength}}</code> characters are entered out of 255 </small>
+      </div> -->
+      <!-- <div class="col col-md-6">
+        <div class="form-group  ty-font user-input-wrp"> <br/>
+          <textarea class="form-control  inputText" name="description" formControlName="description"
+          placeholder="Enter Description(allows only 255 characters)" maxlength="255" required>
+          <span class="floating-label">Description</span>
+          <div class="text-danger" *ngIf='description.touched && description.invalid'>
+            <div *ngIf='description.errors.required'>
+              *This field is mandatory
+            </div>
+          </div>
+          <small class="form-text text-muted"><code>{{description.value.length}}</code> of
+            <code>{{maxdescriptionLength}}</code> characters are entered out of 255 </small>
+        </div>
+        </div> -->
+
+        <!-- <div class="col col-md-6">
+          <div class="form-group  ty-font user-input-wrp"> <br/>
+            <textarea class="form-control  inputText" name="description" formControlName="description"
+         maxlength="255"
+              required></textarea>
+            <span class="floating-label">Description</span>
+            <div class="text-danger" *ngIf='description.touched && description.invalid'>
+              <div *ngIf='description.errors.required'>
+                *This field is mandatory
+              </div>
+            </div>
+            <small class="form-text text-muted"><code>{{description.value.length}}</code> of
+              <code>{{maxdescriptionLength}}</code> characters are entered out of 255 </small>
+          </div>
+          </div> -->
+          <div class="col col-12 col-sm-6 col-md-8">
+            <div class="form-group  ty-font user-input-wrp"> <br/>
+             
+              <textarea class="form-control  inputText" name="description" formControlName="description"
+              maxlength="255"
+                   required></textarea>
+                 <span class="floating-label">Description</span>
+                 <div class="text-danger" *ngIf='description.touched && description.invalid'>
+                   <small *ngIf='description.errors.required'>
+                     *This field is mandatory
+                   </small>
+                 </div>
+                 <small class="form-text text-muted"><code>{{description.value.length}}</code> of
+                   <code>{{maxdescriptionLength}}</code> characters are entered out of 255 </small>
+            </div>
+            </div>
+        </div>
+    <br />
+     <div class="row card-body mt-2  mycard shodow" id="row2">
+      <div class="col col-12 col-sm-6 col-md-6">
+        <!-- <div class="form-group">
+          <label for="startDate">Start Date<span style="color:red;">*</span></label>
+          <input type="text" name="startDate" bsDatepicker [dateCustomClasses]="dateCustomClasses" [minDate]="minDate"
+            formControlName="startDate" class="form-control" placeholder="Select End date">
+          <pre *ngIf="myForm.value.startDate" class="code-preview">{{myForm.value.startDate | date}}</pre>
+          <div *ngIf="startDate.invalid && startDate.touched">
+            <small class="text-danger" *ngIf="startDate.errors?.required">startDate should be Required</small>
+          </div>
+        </div> -->
+        <div class="form-group  ty-font user-input-wrp"> <br/>
+          <input type="text" name="startDate" bsDatepicker [dateCustomClasses]="dateCustomClasses" [minDate]="minDate"
+          formControlName="startDate" class="form-control inputText"
+            required>
+          <span class="floating-label">Start Date</span>
+          <pre *ngIf="myForm.value.startDate" class="code-preview">{{myForm.value.startDate | date}}</pre>
+          <div *ngIf="startDate.invalid && startDate.touched">
+            <small class="text-danger" *ngIf="startDate.errors?.required">StartDate should be Required</small>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-sm-6 col-md-6">
+        <div class="form-group  ty-font user-input-wrp"> <br/>
+        <input type="text" name="enddate" formControlName="endDate" class="form-control inputText"
+          (ngModelChange)="compareTwoDates()" bsDatepicker bsDatepicker [minDate]="minDate"
+          [dateCustomClasses]="dateCustomClasses" [maxDate]="maxDate"  required/>
+          <span class="floating-label">End Date</span>
+        <pre *ngIf="myForm.value.endDate" class="code-preview">{{myForm.value.endDate | date}}</pre>
+        <small *ngIf="error.isError" class="text-danger">{{ error.errorMessage }}</small>
+        <div *ngIf="endDate.invalid && endDate.touched">
+          <small class="text-danger" *ngIf="endDate.errors?.required">Enddate should be Required</small>
+        </div>
+        </div>
+      </div>
+
+    </div>
+    <br />
+    <div class="row card-body mt-2  mycard shodow" id="row3">
+
+      <div class="col col-12 col-sm-6 col-md-6">
+        <div class="input-group">
+          <div class="custom-file">
+
+            <br>
+
+            <input type="file" name="uploadImage" value="uploadImage" id="uploadImage" accept="images/**"
+              (change)="onselectednewFile($event)" class="form-control" style="cursor: pointer;border-bottom:1px solid #777 !important;">
+            <label for="fileupload"></label>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class=" card-body mt-2  mycard shodow" id="row4" formArrayName="questions">
+      <div *ngFor="let group of myForm.get('questions').controls; index as i">
+        <div [formGroupName]="i">
+         <div class="row">
+            <div class="col col-12 col-sm-4 col-md-4">
+              <div class="form-group ty-font user-input-wrp" style="width: 141% !important;">
+                <!-- <label for="questionName">Q{{ i + 1 }}*</label> -->
+                <input type="text" name="questionName" formControlName="questionName" class="form-control inputText" style="height: 53px !important;"
+                  required/>
+                  <span class="floating-label">Q{{ i + 1 }}</span>
+                  <!-- <div *ngIf="questionName.invalid && questionName.touched">
+                    <small class="text-danger" *ngIf="questionName.errors?.required">Question Name should be Required</small>
+                  </div> -->
+              </div>
+            </div>
+            <!-- <div class="col col-12 col-sm-4 col-md-4">
+              <div class="form-group ty-font user-input-wrp" style="    margin-top: 23px;
+              width: 185% !important;
+              margin-left: 167px;">
+                
+                <select class="form-control inputText" name="questionType" formControlName="questionType"
+                 required>
+                  <option value="mcq">Multiple Choice</option>
+                  <option value="checkbox">Checkbox</option>
+                  <option value="paragraph">Textarea</option>
+                </select>
+                <span class="floating-label">Select options</span>
+              </div>
+
+            </div> -->
+            <div class="col col-12 col-sm-4 col-md-4 floating-label" style="margin-top: 23px;
+            width: 185% !important;
+            margin-left: 167px;">  
+              <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="questionType" formControlName="questionType" >
+                <option value=""></option>
+                <option value="mcq">Multiple Choice</option>
+                <option value="checkbox">Checkbox</option>
+                <option value="paragraph">Textarea</option>
+              </select>
+              <span class="highlight"></span>
+              <label>Select options</label>
+              <!-- <div *ngIf="questionType.invalid && questionType.touched">
+                <small class="text-danger" *ngIf="questionType.errors?.required">QuestionType should be Required</small>
+              </div> -->
+            </div>
+            <div class="col col-12 col-sm-2 col-md-2" style="margin-top: 31px;
+            margin-left: 913px;
+            position: absolute;">
+
+
+              <i class="fa fa-minus-circle" aria-hidden="true" (click)="deleteQuestion(i)"
+                style="font-size:20px !important;cursor: pointer;"
+                title="Delete Question"></i>
+
+            </div>
+          </div>
+        
+          <div class="card-body">
+            <div formArrayName="options" *ngIf="
+                myForm.get('questions').controls[i].controls.questionType
+                  .value === 'mcq'
+              ">
+              <div class="row" *ngFor="
+                  let control of myForm.get('questions').controls[i].controls
+                    .options.controls;
+                  index as j
+                ">
+                <div [formGroupName]='j' class="col col-md-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        {{j+1}}<input type="radio" disabled />
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" name="value" id="option{{ j + 1 }}"
+                      formControlName="value" />
+                  </div>
+                  <br />
+                </div>
+                <div class="col col-md-4">
+
+                  <i class="fa fa-plus-circle" aria-hidden="true" (click)="addOption(i,$event)" *ngIf="
+                    myForm.get('questions').controls[i].controls.questionType.value === 'mcq'"
+                    style="font-size:20px !important;cursor: pointer;margin-top:5px !important;" title="Add"></i>
+                  &nbsp;&nbsp;&nbsp;
+
+                  <i class="fa fa-minus-circle" aria-hidden="true" (click)="removeOption(i,j)" *ngIf="
+                    myForm.get('questions').controls[i].controls.questionType.value === 'mcq'"
+                    style="font-size:20px !important;cursor: pointer;margin-top: 5px !important;" title="Remove"></i>
+
+                </div>
+              </div>
+              &nbsp;
+            </div>
+            <div formArrayName="options" *ngIf="
+                myForm.get('questions').controls[i].controls.questionType
+                  .value === 'checkbox'
+              ">
+              <div class="row" *ngFor="
+                  let control of myForm.get('questions').controls[i].controls
+                    .options.controls;
+                  index as j
+                ">
+                <div [formGroupName]='j' class="col col-md-8">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        {{j+1}}<input type="checkbox" disabled style="border: 1px solid #000;" />
+                      </div>
+                    </div>
+                    <input type="text" class="form-control" name="value" id="option{{ j + 1 }}"
+                      formControlName="value" />
+                  </div>
+                  <br />
+                </div>
+
+
+                <div class="col col-md-4">
+
+
+                  <i class="fa fa-plus-circle" aria-hidden="true" (click)="addOption(i,$event)" *ngIf="
+                    myForm.get('questions').controls[i].controls.questionType.value === 'checkbox'"
+                    style="font-size:20px !important;cursor: pointer;margin-top:5px !important;" title="Add"></i>
+                  &nbsp;&nbsp;&nbsp;
+
+
+                  <i class="fa fa-minus-circle" aria-hidden="true" (click)="removeOption(i,j)" *ngIf="
+                    myForm.get('questions').controls[i].controls.questionType.value === 'checkbox'"
+                    style="font-size:20px !important;cursor: pointer;margin-top: 5px !important;" title="Remove"></i>
+
+                </div>
+              </div>
+              &nbsp;
+            </div>
+
+            <div formArrayName="options" *ngIf="
+            myForm.get('questions').controls[i].controls.questionType
+                .value === 'paragraph'
+            ">
+              <div class="row" *ngFor="
+                let control of myForm.get('questions').controls[i].controls
+                  .options.controls;
+                index as j
+              ">
+                <div [formGroupName]='j' class="col col-md-8">
+                  <div class="input-group">
+
+
+                  </div>
+                  <br />
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+    <div class="row mt-4">
+      <div class="col col-md-4">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"
+          (click)="previewQuestions()" [disabled]="!myForm.valid" style="font-size: 13px !important;
+          border-radius: 5px !important;font-size: 15px !important;">
+          Preview
+        </button>
+      </div>
+      <div class="col col-md-4 ">
+        <button type="button" (click)="addQuestion()" class="btn btn-primary offset-6 mb-2" style="font-size: 13px !important;
+        border-radius: 5px !important;font-size: 15px !important;">
+          Add Question
+        </button>
+      </div>
+      <div class="col col-md-4 ">
+        <button type="submit" class="btn btn-success float-right" [disabled]="!myForm.valid || error.isError" style="font-size: 13px !important;
+        border-radius: 5px !important;font-size: 15px !important;" (click)="activate($event)">Submit
+
+        </button>
+
+      </div>
+
+
+    </div>
+  </form>
+</div>
+
+<!--------------------------- Modal -------------------------->
+<div class="modal fade mymodal " id="exampleModalLong" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background:linear-gradient(-45deg, #274685,#1391a5);">
+        <h5 class="modal-title text-white" id="exampleModalLongTitle">
+          Preview
+        </h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="card-body" *ngFor="let question of anyquestions; index as i">
+            <div class="row">
+              <div class="col col-md-12 mt-3">
+                <div style="padding:25px;">
+                  <div>{{ i + 1 }}. &nbsp;{{ question.questionName }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col col-md-6" style="padding-left: 55px;">
+                <div class="input-group mb-3" *ngFor="let option of question.options; index as i"
+                  style="border:none !important;">
+                  <div class="input-group-prepend" style="border:none !important;">
+                    <div *ngIf="question.questionType === 'mcq'" style="border:none !important;">
+                      <input type="radio" name="value" style="border:none !important;"
+                        style="height:18px !important;width:18px !important" />
+                    </div>
+                    <div *ngIf="question.questionType === 'checkbox'">
+                      <input type="checkbox" name="value" style="height:18px !important;width:18px !important" />
+                    </div>
+                  </div>
+                  <div *ngIf="question.questionType === 'checkbox'" style="padding:0px 10px;margin-top: -5px;">
+                    {{ option.value }}
+                  </div>
+                  <div *ngIf="question.questionType === 'mcq'" style="padding:0px 10px;margin-top: -5px;">
+                    {{ option.value }}
+                  </div>
+                  <textarea name="value" value="{{ option.value }}" *ngIf="question.questionType === 'paragraph'"
+                    style="padding: 5px;width: 90%;height:100%"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------------- Footer -------------------------->
+<footer class="footer">
+  <div class="row">
+    <div class=" col-6 col-md-4" style="text-decoration: none;">
+      <span class="navbar-brand ty-logo1"> TES<span class="ty-span1">TY</span>ANTRA
+      </span>
+      <span class="ty-social">
+          <a href=""><i class="fa fa-facebook myicon-fb"></i></a>
+          <a href=""><i class="fa fa-instagram myicon-inst"></i></a>
+          <a href=""><i class="fa fa-linkedin-square myicon-linkd"></i></a>
+      </span>
+    </div>
+    <div class="col-6 col-md-8 ty-text">
+      <div>© 2019 Test Yantra Software Solutions</div>
+    </div>
+  </div>
+</footer> 

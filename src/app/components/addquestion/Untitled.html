@@ -1,0 +1,24 @@
+<form>
+        <div class="row mt-4" *ngIf='optioncheckbox'>
+            <div class="col col-md-8">
+                <div formArrayName="alternatecheckbox" *ngFor="let hema of alternatecheckbox.controls; let i=index" class="mt-4">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <input type="checkbox">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name="checkboxans1"  [formControlName]="i">
+                      </div>
+                </div>
+
+            </div>
+            <div class="col col-md-4">
+                <div class="form-group" formArrayName="alternatecheckbox" *ngFor="let anil of alternatecheckbox.controls; let i=index" class="mt-4">
+                    <div  class="btn btn-primary" (click)="addalternatecheckbox()">+</div>
+                    <div  class="btn removebtn float-right" (click)="deletecheckboxfield(i)">-</div>
+                </div>
+
+            </div>
+        </div> 
+    </form>

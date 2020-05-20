@@ -1,0 +1,409 @@
+/* for material css */
+.user-input-wrp {
+  position: relative;
+  width: 82%;
+}
+
+.user-input-wrp .inputText {
+  height: 30px;
+  width: 100%;
+  outline: none;
+  border: none !important;
+  border-bottom: 1px solid #777 !important;
+  box-shadow: none !important;
+}
+
+.user-input-wrp .inputText:focus {
+  border-width: medium medium 2px;
+}
+
+.user-input-wrp .floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 18px;
+  left: 10px;
+  transition: 0.2s ease all;
+}
+
+.user-input-wrp input:focus~.floating-label, .user-input-wrp input:not(:focus):valid~.floating-label {
+  top: 0px;
+  left: 10px;
+  font-size: 13px;
+  opacity: 1;
+}
+
+.user-input-wrp textarea:focus~.floating-label, .user-input-wrp textarea:not(:focus):valid~.floating-label {
+  top: 0px;
+  left: 10px;
+  font-size: 13px;
+  opacity: 1;
+}
+
+.user-input-wrp select:focus~.floating-label, .user-input-wrp select:not(:focus):valid~.floating-label {
+  top: 0px;
+  left: 10px;
+  font-size: 13px;
+  opacity: 1;
+}
+.form-control {
+  border-color: #ced4da;
+  color:#495057;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}   
+
+.form-control:focus {
+border-color: #274685 ;
+/* box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25); */
+} 
+/*  */
+/****  floating-Lable style start ****/
+.floating-label { 
+  position:relative; 
+  margin-bottom:20px; 
+}
+.floating-input , .floating-select {
+  font-size:14px;
+  padding:4px 4px;
+  display:block;
+  width:100%;
+  height:30px;
+  background-color: transparent;
+  border:none;
+  border-bottom:1px solid #757575;
+  border-radius: 0.25rem;
+}
+
+.floating-input:focus , .floating-select:focus {
+     outline:none;
+     /* border-bottom:2px solid #5264AE;  */
+}
+
+label {
+  /* color:#999;  */
+  font-size:1rem;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:15px;
+  top:5px;
+  border-radius: 0.25rem;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+.floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+  top:-18px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+.floating-select:focus ~ label , .floating-select:not([value=""]):valid ~ label {
+  top:-18px;
+  font-size:14px;
+  /* color:#5264AE; */
+}
+
+/* active state */
+.floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+  width:50%;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.floating-textarea {
+   min-height: 30px;
+   max-height: 260px; 
+   overflow:hidden;
+  overflow-x: hidden; 
+}
+
+/* highlighter */
+.highlight {
+  position:absolute;
+  height:50%; 
+  width:100%; 
+  top:15%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+.floating-input:focus ~ .highlight , .floating-select:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* animation */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+/****  floating-Lable style end ****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***   Body style start  ***/
+
+html {
+    font-family: "Helvetica Neue", Helvetica, "Noto Sans", sans-serif, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #949494;
+    background-color: #ffffff;
+}
+/***   Body style end  ***/
+
+
+/***   daniel - Fork me friend - style   ***/
+.floating-credit { position:fixed; bottom:10px;right:10px; color:#aaa; font-size:13px;font-family:arial,sans-serif; }
+.floating-credit a { text-decoration:none; color:#000000; font-weight:bold; }
+.floating-credit a:hover { border-bottom:1px dotted #f8f8f8; }
+.floating-heading { position:fixed; color:#aaa; font-size:20px; font-family:arial,sans-serif; }
+/***  daniel - Fork me friend - style  ***/
+.btn {
+    padding: 6px 20px !important;
+}
+.card{
+  margin-top: 50px;
+  border: 1px solid #000 !important;
+}
+/* .form-control {
+border: 1px solid #000 !important;
+} */
+button[disabled] {
+  cursor: default;
+}
+.mybtn {
+    background-color: #2d71a1 !important;
+    color: #fff;
+ 
+}
+.removebtn{
+    background:grey !important;
+    color: #fff;
+    
+}
+.modal-content {
+  height: 99%;
+}
+
+
+.modal-backdrop.in {
+  opacity: 0.2 !important;
+}
+.modal-dialog {
+  width: 95%;
+  padding: 0;
+  height: auto;
+  margin-top:72px;
+}
+
+.modal-content {
+  height: 100%;
+  min-height: 90vh !important;
+  border: 2px solid  black;
+}
+
+
+/*  */
+.input-group-text:not(:last-child) {
+  border-top-right-radius: 0;
+  border:none;
+  border-bottom-right-radius: 0;
+} 
+
+
+@media (min-width: 576px) {
+  .modal-dialog { max-width: none; }
+}
+
+
+/* for navabr */
+
+.text-logo {
+ 
+  color: white;
+  font-size: 25px;
+}
+.text-color {
+  color: #ff9800;
+}
+.new-bg {
+  background-color: #263248;
+}
+.mybtn {
+  margin-top: 6px;
+  color: white !important;
+  border-color: #da8405;
+  font-weight: 500;
+
+}
+.mybtn:hover  {
+  background-color: white !important;
+  color:black !important;
+}
+.dropdown-menu {
+
+margin-top: 12px !important;
+}
+
+.btn {
+padding: 5px 8px !important;
+font-size: 13px !important;
+}
+.myImg {
+ 
+  margin-top: 25px;
+  width: 25%;
+ 
+  cursor: pointer;
+}
+
+
+ 
+/* for card */
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-color: #28a745 !important;
+  padding-right: calc(1.5em + .75rem);
+  background-image: none !important;
+  background-repeat: no-repeat !important;
+  background-position: right calc(.375em + .1875rem) center !important;
+  background-size: calc(.75em + .375rem) calc(.75em + .375rem) !important;
+}
+
+.mycard:hover {
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.mycard {
+  border:1px dotted rgb(31, 30, 30);;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  
+}
+.minicard {
+    height: 10px !important;
+    overflow: hidden !important;
+    padding: 7px 1px 31px 1px !important;
+    border-radius: 0%;
+   
+}
+.z-depth {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  
+}
+
+
+
+ /* for footer */
+
+
+ 
+
+ .navbar-brand {
+  font-weight: 600 !important;
+  font-size: 20px !important;
+  margin-right: 1rem !important;
+}
+
+.ty-logo1{
+  font-size: 25px;
+  left: 10px;
+  position: relative;
+}
+
+.ty-span1 {
+  color: #ff9800;
+  font-size: 20px;
+}
+
+.new-bg {
+  background-color: #263248;
+}
+
+.new-link {
+  color: #fff !important;
+  padding: 5px 12px !important;
+  
+}
+
+.new-link:hover {
+  color: #ff9800 !important;
+}
+
+footer {
+  background-color: #F5F5F5;
+}
+
+.footer {
+overflow:hidden;
+margin-top: 226px !important;
+bottom: 0px !important;
+left: 0 !important;
+width: 100% !important;
+z-index: 1 !important;
+margin-top: 10px !important;
+}
+
+.ty-social a {
+  color: #263248;
+  margin: 10px 5px;
+}
+
+.myicon-fb,.myicon-inst,.myicon-linkd{
+  padding: 2px 6px;
+  border: 1px solid #ff9800;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.myicon-fb:hover,.myicon-inst:hover,.myicon-linkd:hover {
+  color:white;
+  background-color: #394a69;
+  transition:2s;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 16px;
+  border: 1px solid white;
+
+}
+
+.ty-text {
+  color: #263248;
+  font-weight: 600;
+  top: 10px;
+}

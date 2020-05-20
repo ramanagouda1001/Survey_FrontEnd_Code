@@ -1,0 +1,109 @@
+<!-- 
+
+    
+<!-- <div class="modal-content">
+  <div class="modal-header" style="background:linear-gradient(-45deg, #274685,#1391a5);">
+    <h5 class="modal-title text-white" id="exampleModalLongTitle">Survey</h5>
+  </div>
+  <div class="modal-body">
+        <div class="card-body" *ngFor='let userquestion of userQuestions; index as i'>     
+            <div class="row">
+                <div class="col col-md-12 mt-3">
+                    <div class="form-group">
+                      <label>{{i+1}}</label>
+                      <input type="text" class="form-control">
+                    </div>
+                </div>            
+            </div>
+            <div class="row">
+              <div class="col col-md-6" style="padding-left: 55px;">
+                <div class="input-group mb-3"  *ngFor="let option of userquestion.options;  index as i" style="border:none !important;">
+                  <div class="input-group-prepend" style="border:none !important;">
+                    <div  *ngIf="userquestion.questionType==='mcq'" style="border:none !important;" >
+                      <input type="radio" name="value" style="border:none !important;" style="height:18px !important;width:18px !important">
+                    </div>
+                    <div  *ngIf="userquestion.questionType==='checkbox'">
+                      <input type="checkbox" name="value" style="height:18px !important;width:18px !important">
+                    </div>
+                  </div>
+                    <div *ngIf="userquestion.questionType === 'checkbox'" style="padding:0px 10px;margin-top: -5px;">{{option}}</div>
+                    <div *ngIf="userquestion.questionType === 'mcq'" style="padding:0px 10px;margin-top: -5px;">{{option}}</div>
+                    <textarea name="value" value="{{option}}" *ngIf="userquestion.questionType=== 'paragraph'" style="padding: 5px;width: 90%;height:100%"></textarea> 
+                </div>
+              </div> 
+            </div>
+            
+            <hr>
+            
+        </div>  
+        <button type="submit" class="btn btn-primary btn">submit</button>
+  </div>
+</div> -->
+
+
+<!-- <div class="container mt-4">
+  <form #userQuestion="ngForm" (ngSubmit)='onsubmit(userQuestion)'>
+    {{userQuestion.value |json}}
+    <div class="card p-4" *ngFor="let userQuestions of userQuestions; index as i">
+      <div class="form-group">
+        <label>Question{{i+1}}</label>
+        <input type="text" name='questionName{{i+1}}' class="form-control"  [(ngModel)]='userQuestions.questionName'>
+      </div>
+
+      <div class="input-group mb-3" style="border:none !important;">
+        <div class="input-group-prepend" style="border:none !important;">
+          <div  style="border:none !important;" >
+            <input type="radio" *ngIf="userQuestions.questionType==='mcq'" name="value" style="border:none !important;" style="height:18px !important;width:18px !important">
+          </div>
+          <div>
+            <input type="checkbox" *ngIf="userQuestions.questionType==='chec'" name="value" style="height:18px !important;width:18px !important">
+          </div>
+        </div>
+          <div  style="padding:0px 10px;margin-top: -5px;">{{option}}</div>
+          <div  style="padding:0px 10px;margin-top: -5px;">{{option}}</div>
+      </div>
+    </div>
+
+   
+
+    
+    <button type="submit" class="btn btn-primary">sumbit</button>
+  </form>
+</div> -->
+    
+<div class="modal-body">
+  <form #userform='ngForm' (ngSubmit)='onsubmit(userform)'>
+    {{userform.value | json}}
+      <div class="card-body" *ngFor='let question of userQuestions; index as i;'>     
+          <div class="row">
+              <div class="col col-md-12 mt-3">
+                  <div style="padding:25px;">
+                      <!-- <div>{{i+1}}. &nbsp;{{question.questionName}}</div> -->
+                      <input type="text" name="questionName{{i+1}}" #questionName='ngModel' [(ngModel)]='question.questionName' class="form-control">
+                  </div>
+              </div>            
+          </div>
+
+          <div class="row">
+            <div class="col col-md-6" style="padding-left: 55px;">
+              <div class="input-group mb-3"  *ngFor="let option of question.options;  index as i" style="border:none !important;">
+                <div class="input-group-prepend" style="border:none !important;">
+                  <div  *ngIf="question.questionType==='mcq'" style="border:none !important;" (click)='sendAnswer(question,option)'>
+                    <input type="radio" name="value" style="border:none !important;" style="height:18px !important;width:18px !important">
+                  </div>
+                  <div  *ngIf="question.questionType==='checkbox'">
+                    <input type="checkbox" name="value" style="height:18px !important;width:18px !important"  (click)='sendAnswer(question,$event)'>
+                  </div>
+                </div>
+                  <div *ngIf="question.questionType === 'checkbox'" style="padding:0px 10px;margin-top: -5px;" >{{option}}</div>
+                  <div *ngIf="question.questionType === 'mcq'" style="padding:0px 10px;margin-top: -5px;" >{{option}}</div>
+                  <textarea name="value" value="{{option}}" *ngIf="question.questionType=== 'paragraph'" style="padding: 5px;width: 90%;height:100%"></textarea> 
+              </div>
+            </div> 
+          </div>   
+          <hr>
+      </div>   
+      <button class="btn btn-primary">submit</button>  
+  </form>
+
+</div>

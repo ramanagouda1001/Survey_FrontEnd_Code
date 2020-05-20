@@ -1,0 +1,32 @@
+
+body {
+    background-color: white;
+}
+.flex-container {
+    display: flex;
+    height: 900px;
+    align-items: center;
+    justify-content: center;
+    /* background-color: ; */
+    /* opacity: 0.5; */
+    cursor: pointer;
+  }
+  
+  .flex-container > div {
+    background-color: #ddd;
+    width: 40%;
+    height: 300px;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
